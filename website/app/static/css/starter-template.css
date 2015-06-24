@@ -1,0 +1,24 @@
+body {
+background: url('/static/head2000.jpg') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+-o-background-size: cover;
+padding-top: 20px;
+}
+
+h2 {
+
+	color:white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+a {
+
+	color:white;
+}
+
+p {
+
+	color:black;
+}
