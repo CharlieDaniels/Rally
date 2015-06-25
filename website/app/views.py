@@ -46,7 +46,14 @@ def cities_output():
   #pull 'ID' from input field and store it
   #CHANGED!
   #DateHour = request.args.get('ID')
-  hourly = request.args.get('ID')
+  hourly = request.args.get('date')
+  if hourly == '':
+  	hourly = '2015-06-12'
+  hour = request.args.get('hour')
+  #hour = str(15)
+  hourly = hourly + ' ' +hour
+
+  #hourly = request.args.get('ID')
   city_table = request.args.get('city')
   if city_table == 'Oakland':
     # city_t = 'oak_year_predict'

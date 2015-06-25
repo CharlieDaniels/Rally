@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/datepicker.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -91,22 +92,52 @@
     <div class="starter-template">
         <h2>On the day: {{the_date}}</h2>
         <p>Resources on past protests:</p>
-    </div>
+      
+       <form  action="/output" method="GET">
+       <div class="hero-unit">
+        <label for="example1">Date:</label>
+                <input  type="text" placeholder="Pick a date"  id="example1" name='date'>
+            </div>
 
-    <div class = "container">
+        
+       <div class = "container">
+       <form  action="/output" method="GET">
+        <label for="hour">Time:</label>
+        <select id="hour" name = "hour">
+          <option value="00">00</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+        </select>
 
-      <form  action="/output" method="GET">
-        <div class="form-group">
-          <label for="ID">Date and Time:</label>
-          <input type="text" id="ID" name='ID' placeholder="2014-11-25 18">
-        </div>
-
+        <div>
+        <label for="city">City:</label>
         <select id="city" name = "city">
           <option value="Oakland">Oakland</option>
           <option value="San Francisco">San Francisco</option>
         </select>
-
-        <div>
+        </div>
         <p>
         </p>
         <div class="button">
@@ -165,5 +196,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                
+                $('#example1').datepicker({
+                    format: "yyyy-mm-dd"
+
+                });  
+                $('#example1').datepicker().on('changeDate', function(){
+          $(this).blur();
+        });
+            
+            });
+        </script>
   </body>
 </html>
