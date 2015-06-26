@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>RALLY</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 
   </head>
 
-  <body>
+  <body id="input">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -64,11 +64,11 @@
 
     <div class="starter-template">
         <h2>Rapid protest detection</h2>
-        <p>Sign up for real time notifications so you are the first on the scene.</p>
+        <p style = "font-size:18px"><b>Sign up for real time notifications so you are the first on the scene.</b></p>
         <p>
         <a href="{{ url_for('cities_notifications')}}">Email Signup</a>
         </p>
-        <p>Examples of recent notifications</p>
+        <p style = "font-size:18px"><b>Examples of recent notifications</b></p>
     </div>
 
     <div class = "container">
@@ -96,15 +96,15 @@
    <p>
    </p>
     
-    <p>Resources on past protests:</p>
+    <p style = "font-size:18px">Resources on past protests:</p>
       <form  action="/output" method="GET">
        <div class = "container">
        <form  action="/output" method="GET">
        <div class="hero-unit">
         <label for="example1">Date:</label>
                 <input  type="text" placeholder="Pick a date"  id="example1" name='date'>
-            </div>
-        
+            
+      <div>
         <label for="hour">Time:</label>
         <select id="hour" name = "hour">
           <option value="00">00</option>
@@ -133,14 +133,16 @@
           <option value="23">23</option>
           <option value="24">24</option>
         </select>
+      </div>
 
-        <div>
+      <div>
         <label for="city">City:</label>
         <select id="city" name = "city">
           <option value="Oakland">Oakland</option>
           <option value="San Francisco">San Francisco</option>
         </select>
-        </div>
+      </div>
+
         <p>
         </p>
         <div class="button">

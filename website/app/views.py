@@ -4,7 +4,7 @@ import pymysql as mdb
 from a_Model import ModelIt
 
 #db = mdb.connect(user="root", host="localhost", db="world_innodb", charset='utf8')
-db = mdb.connect(user="root", host="localhost", db="protest", charset='utf8')
+db = mdb.connect(user="readonlyuser", host="localhost", db="protest", charset='utf8')
 
 @app.route('/')
 @app.route('/index')
@@ -81,16 +81,16 @@ def cities_output():
     if query_results[0][0] == 1:
       the_result = 'There are no protests anticipated at this time'
       picture = 'https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11377903_1666635923568228_1658724902_n.jpg'
-      return render_template("output.html", picture = picture, the_result = the_result, the_city = the_city, city_table = city_table, the_date = the_date, latitude = 'none', longitude = 'none')
+      return render_template("output.html", loca = ' ', picture = picture, the_result = the_result, the_city = the_city, city_table = city_table, the_date = the_date, latitude = 'none', longitude = 'none')
     elif query_results[0][0] == -1:
       the_result = 'A protest is imminent'
       picture = query_results[0][1]#'https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/11410430_774743549311445_853552540_n.jpg'
-      return render_template("output.html", picture = picture, the_result = the_result, the_city = the_city, city_table = city_table, the_date = the_date, latitude = latitude, longitude = longitude)
+      return render_template("output.html", loca = 'Approximate Location', picture = picture, the_result = the_result, the_city = the_city, city_table = city_table, the_date = the_date, latitude = latitude, longitude = longitude)
     else:
       the_result = 'There are no protests anticipated at this time!'
 	    #the_result = query_results[0]
       picture = ''
-      return render_template("output.html", picture = picture, the_result = the_result, the_city = the_city, city_table = city_table, the_date = the_date, latitude = latitude, longitude = longitude)
+      return render_template("output.html", loca = ' ', picture = picture, the_result = the_result, the_city = the_city, city_table = city_table, the_date = the_date, latitude = latitude, longitude = longitude)
 
 	  # return render_template("output.html", picture = picture, the_result = the_result, the_city = the_city, city_table = city_table, the_date = the_date, latitude = latitude, longitude = longitude)
   

@@ -9,13 +9,13 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>RALLY</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    <link href="../static/css/starter-template.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/datepicker.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -62,7 +62,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body id="output">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -88,75 +88,40 @@
 
 <br><br>
 
-<div class="container">
-    <div class="starter-template">
-        <h2>On the day: {{the_date}}</h2>
-        <p>Resources on past protests:</p>
-      
-       <form  action="/output" method="GET">
-       <div class="hero-unit">
-        <label for="example1">Date:</label>
-                <input  type="text" placeholder="Pick a date"  id="example1" name='date'>
-            </div>
 
-        
-       <div class = "container">
-       <form  action="/output" method="GET">
-        <label for="hour">Time:</label>
-        <select id="hour" name = "hour">
-          <option value="00">00</option>
-          <option value="01">01</option>
-          <option value="02">02</option>
-          <option value="03">03</option>
-          <option value="04">04</option>
-          <option value="05">05</option>
-          <option value="06">06</option>
-          <option value="07">07</option>
-          <option value="08">08</option>
-          <option value="09">09</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-        </select>
 
-        <div>
-        <label for="city">City:</label>
-        <select id="city" name = "city">
-          <option value="Oakland">Oakland</option>
-          <option value="San Francisco">San Francisco</option>
-        </select>
-        </div>
-        <p>
-        </p>
-        <div class="button">
-          <button type="submit" class="btn btn-default btn-lg">search</button>
-        </div>
-        </div>
-      </form>
-    </div>
+
+
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
 
-  </div> <!-- /.container-->
+ 
 
-    <div class="container">
-      <div class="starter-template">
+    <!-- <div class="container"> -->
+    <div class = "title">
+    <h2>On the day {{the_date}}</h2>
+    </div>
+    <table class = "table">
+    <tr>
+    <td> 
         <h3>{{the_result}} in {{city_table}}</h3>
+        <br>
+      <!-- <div class="row"> -->
+      <!-- <div class="col-md-6"> -->
+      
 <!--         <p class ="lead">What's happening in {{city_table}}: {{the_result}}</p> -->
-        <img src={{picture}} alt="">
-        <div id="map-canvas" style="float:right; left:80px; top:130px"></div>
+        <img src={{picture}} alt="" width="400" height ="400">
+        <br>
+        <td>
+        <!-- </div> -->
+        <h3> {{loca}} </h3>
+        <br>
+        <div class="col-md-6" id="map-canvas"></div>
+        <br>
+        </td>
+        </tr>
+        </table>
+         <!-- <div class="col-md-6" id="map-canvas" style="float:right; left:80px; top:130px"></div>-->
         <!-- <img src="https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/11410430_774743549311445_853552540_n.jpg" alt=""> -->
         
         <!-- <p class="lead">Below is the result of your query.<br> Your results for Oakland: {{the_result}}</p> -->
@@ -172,7 +137,60 @@
 
      </div><!-- /.container -->
 
+  <div class="container">
+    
+      <p></p>
+      <p style = "font-size:18px">Resources on past protests:</p>
+    
+     <form  action="/output" method="GET">
+     <div class="hero-unit">
+        <label for="example1">Date:</label>
+        <input  type="text" placeholder="Pick a date"  id="example1" name='date'>
+         
+        <form  action="/output" method="GET">
+        <label for="hour">Time:</label>
+        <select id="hour" name = "hour">
+        <option value="00">00</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        </select>
 
+        <label for="city">City:</label>
+        <select id="city" name = "city">
+        <option value="Oakland">Oakland</option>
+        <option value="San Francisco">San Francisco</option>
+        </select>
+    </div>
+        <p>
+        </p>
+    <div class="button">
+        <button type="submit" class="btn btn-default btn-lg">search</button>
+    </div>
+        
+      </form>
+  </div>
      
 
    <!--  <div class="container">
@@ -186,7 +204,7 @@
       <script src="static/js/bootstrap.min.js"></script>
 
 
-     </div><!-- /.container -->
+     
 
 
 
