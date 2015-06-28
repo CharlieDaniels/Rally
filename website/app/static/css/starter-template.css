@@ -16,6 +16,24 @@ background-size: cover;
 padding-top: 20px;
 }
 
+#notifications {
+background: url('/static/concertedit3.png') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+-o-background-size: cover;
+padding-top: 20px;
+}
+
+#oops {
+background: url('/static/concertedit3.png') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+-o-background-size: cover;
+padding-top: 20px;
+}
+
 .table {
 	margin-left: 100px;
 }
